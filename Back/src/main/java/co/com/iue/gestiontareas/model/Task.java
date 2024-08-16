@@ -1,11 +1,16 @@
 package co.com.iue.gestiontareas.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Data;
+
 import javax.persistence.*;
 
 import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
+@Data
 @Entity
 @Table(name = "task")
 public class Task {
@@ -21,7 +26,7 @@ public class Task {
     private String description;
 
     @Column(name = "priority")
-    private int priority;
+    private String priority;
 
     @Column(name = "endDate")
     private Date endDate;
@@ -32,13 +37,16 @@ public class Task {
     @Column(name = "status")
     private String status;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name="user_id", nullable=false)
     private User user;
 
+    @JsonManagedReference
     @OneToMany(mappedBy="task")
     private List<Subtask> subtaskList;
 
+    @JsonManagedReference
     @OneToMany(mappedBy="task")
     private List<TaskAudit> taskAuditList;
 }

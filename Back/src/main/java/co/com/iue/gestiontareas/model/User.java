@@ -1,6 +1,8 @@
 package co.com.iue.gestiontareas.model;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -30,6 +32,7 @@ public class User {
     @Column(name="creationDate", nullable = false)
     private LocalDateTime creationDate;
 
+    @JsonManagedReference
     @OneToMany(mappedBy="user")
     private List<Task> tasks;
 

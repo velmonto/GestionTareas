@@ -1,5 +1,6 @@
 package co.com.iue.gestiontareas.security;
 
+import co.com.iue.gestiontareas.model.Role;
 import co.com.iue.gestiontareas.security.jwt.JwtAuthorizationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -55,6 +56,8 @@ public class SecurityConfig{
 
         http.authorizeHttpRequests()
                 .antMatchers("/api/authentication/sign-in", "/api/authentication/sign-up")
+                .permitAll()
+                .antMatchers("/api/task/**")
                 .permitAll()
                 .anyRequest().authenticated();
 
