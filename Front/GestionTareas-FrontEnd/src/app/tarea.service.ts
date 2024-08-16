@@ -14,8 +14,8 @@ export class TareaService {
   constructor(private httpclient: HttpClient) { }
 
   //metodo para obtener tareas
-  obtenerListaTareas():Observable<Tarea[]>{
-    return this.httpclient.get<Tarea[]>(`${this.baseURL}`);
+  obtenerListaTareas(id:number):Observable<Tarea[]>{
+    return this.httpclient.get<Tarea[]>(`${this.baseURL}/task/list/${id}`);
   }
  
   //metodo para guardar una tarea
