@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+.navbar-item {
+    margin:0.5rem 1rem; /* Ajusta el valor del margen según tus necesidades */
+}
+.navbar-link {
+    color: white;
+}
