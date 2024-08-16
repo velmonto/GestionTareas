@@ -59,6 +59,8 @@ public class SecurityConfig{
                 .permitAll()
                 .antMatchers("/api/task/**")
                 .permitAll()
+                .antMatchers("/api/subtask/**")
+                .permitAll()
                 .anyRequest().authenticated();
 
         http.addFilterBefore(jwtAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
