@@ -4,13 +4,15 @@ import { ListaTareasComponent } from './lista-tareas/lista-tareas.component';
 import { RegistrarUsuarioComponent } from './registrar-usuario/registrar-usuario.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistrarTareaComponent } from './registrar-tarea/registrar-tarea.component';
+import { CrearSubtareaComponent } from './crear-subtarea/crear-subtarea.component';
 
 const routes: Routes = [
   {path :'tareas', component:ListaTareasComponent},
 {path : '',redirectTo:'tareas',pathMatch:'full'},
 {path: 'registrar-usuario',component:RegistrarUsuarioComponent},
 {path: 'iniciar-sesion', component:InicioSesionComponent},
-{path: 'registrar-tarea', component:RegistrarTareaComponent}
+{path: 'registrar-tarea', component:RegistrarTareaComponent},
+{path: 'crear-subtarea', component:CrearSubtareaComponent}
 ];
 
 @NgModule({

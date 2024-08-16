@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Tarea } from './tarea';
+import { Usuario } from './usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +16,14 @@ export class TareaService {
   //metodo para obtener tareas
   obtenerListaTareas():Observable<Tarea[]>{
     return this.httpclient.get<Tarea[]>(`${this.baseURL}`);
+  }
+ 
+  //metodo para guardar una tarea
+  registrarTarea(tarea:Tarea):Observable<Object>{
+    return this.httpclient.post(`${this.baseURL}`,tarea);
+  }
+
+  registrarUsuario(usuario:Usuario):Observable<Object>{
+    return this.httpclient.post(`${this.baseURL}`,Usuario);
   }
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tarea } from '../tarea';
+import { TareaService } from '../tarea.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registrar-tarea',
@@ -10,13 +12,24 @@ export class RegistrarTareaComponent implements OnInit{
 
   registrarTarea:Tarea= new Tarea();
 
-  constructor(){}
+  constructor(private tareaServicio:TareaService, private router:Router){}
 
   ngOnInit(): void{
-    console.log(this.registrarTarea);
+    
   }
+guardarTarea(){
+  this.tareaServicio.registrarTarea(this.registrarTarea).subscribe(dato => {
+    console.log(dato);
+    this.isAListaTareas();
+
+  },error => console.log(error) );
+}
+
+isAListaTareas(){
+  this.router.navigate(['/tarea']);
+}
   onSubmit(){
-    console.log(this.registrarTarea);
+    this.guardarTarea();
   }
 
 }
