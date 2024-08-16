@@ -1,0 +1,17 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="navbar-item">
+      <a routerLink="tareas" routerLinkActive="active" class="navbar-link">Lista de Tareas</a>
+    </li>
+    <li class="navbar-item">
+      <a routerLink="registrar-usuario" routerLinkActive="active" class="navbar-link">Registro de Usuario</a>
+    </li>
+    <li class="navbar-item">
+      <a routerLink="registrar-tarea" routerLinkActive="active" class="navbar-link">Registrar Tarea</a>
+    </li>
+  </ul>
+</nav>
+<h1 class="text-center">{{title}}</h1>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
