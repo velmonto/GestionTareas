@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Tarea } from '../tarea';
 import { TareaService } from '../tarea.service';
+import { Usuario } from '../usuario';
 
 @Component({
   selector: 'app-lista-tareas',
@@ -10,6 +11,7 @@ import { TareaService } from '../tarea.service';
 export class ListaTareasComponent implements OnInit {
 
   tareas:Tarea[];
+  usuario:Usuario;
   
   constructor(private tareaServicio:TareaService) {}
   ngOnInit(): void{
@@ -17,7 +19,7 @@ export class ListaTareasComponent implements OnInit {
   }
 
     private obtenerTarea(){
-      this.tareaServicio.obtenerListaTareas().subscribe(dato => {
+      this.tareaServicio.obtenerListaTareas(1).subscribe(dato => {
         this.tareas = dato;
     });
     }
