@@ -17,9 +17,13 @@ export class TareaService {
   obtenerListaTareas(id:number):Observable<Tarea[]>{
     return this.httpclient.get<Tarea[]>(`${this.baseURL}/task/list/${id}`);
   }
+ 
+  //metodo para guardar una tarea
+  registrarTarea(tarea:Tarea):Observable<Object>{
+    return this.httpclient.post(`${this.baseURL}`,tarea);
+  }
 
-  //metodo para crear usuario
   registrarUsuario(usuario:Usuario):Observable<Object>{
-    return this.httpclient.post(`${this.baseURL}/authentication/sign-up`, usuario);
-  }  
+    return this.httpclient.post(`${this.baseURL}`,Usuario);
+  }
 }
