@@ -1,0 +1,30 @@
+<h2 >Tareas</h2>
+<table class="table table-striped">
+    <thead class="table-dark">
+       <tr>
+        <th>Id</th>
+        <th>Titulo</th>
+        <th>Descripcion</th>
+        <th>Estado</th>
+        <th>Fecha Finalizacion</th>
+        <th>Prioridad</th>
+        <th>Palabras Clave</th>
+    </tr>
+        
+
+    </thead>
+    <tbody>
+        <tr *ngFor="let tarea of tareas">
+          <td>{{tarea.id}}</td> 
+          <td>{{tarea.title}}</td> 
+          <td>{{tarea.description}}</td> 
+          <td>{{tarea.status}}</td> 
+          <td>{{tarea.endDate}}</td> 
+          <td>{{tarea.priority}}</td> 
+          <td>{{tarea.label}}</td> 
+          
+        </tr>
+    </tbody>
+
+
+</table>
